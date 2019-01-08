@@ -1,0 +1,21 @@
+// ============
+// Text transforms
+// ============
+.u-textUppercase { text-transform: uppercase !important; }
+.u-textCapitalise { text-transform: capitalize !important; }
+
+.u-textBold {
+  @extend %font-bold;
+}
+
+.u-textItalics {
+  @extend %font-regular-i;
+}
+
+.u-textAlign-center {
+  text-align: center;
+}
+
+.u-textNoWrap {
+  white-space: nowrap;
+}

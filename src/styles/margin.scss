@@ -1,0 +1,38 @@
+// Margin
+
+$sm: $v/4; // 4px
+$md: $v/2; // 8px
+$lg: $v;   //16px
+
+// Margin left
+%u-mL-0 { margin-left: 0 }; .u-mL-0 { @extend %u-mL-0 };
+%u-mL-sm { margin-left: $sm }; .u-mL-sm { @extend %u-mL-sm };
+%u-mL-md { margin-left: $md }; .u-mL-md { @extend %u-mL-md };
+%u-mL-lg { margin-left: $lg }; .u-mL-lg { @extend %u-mL-lg };
+
+// Margin right
+%u-mR-0 { margin-right: 0 }; .u-mR-0 { @extend %u-mR-0 };
+%u-mR-sm { margin-right: $sm }; .u-mR-sm { @extend %u-mR-sm };
+%u-mR-md { margin-right: $md }; .u-mR-md { @extend %u-mR-md };
+%u-mR-lg { margin-right: $lg }; .u-mR-lg { @extend %u-mR-lg };
+
+// Margin top
+%u-mT-0 { margin-top: 0 }; .u-mT-0 { @extend %u-mT-0 };
+%u-mT-sm { margin-top: $sm }; .u-mT-sm { @extend %u-mT-sm };
+%u-mT-md { margin-top: $md }; .u-mT-md { @extend %u-mT-md };
+%u-mT-lg { margin-top: $lg }; .u-mT-lg { @extend %u-mT-lg };
+
+// Margin down
+%u-mB-0 { margin-bottom: 0 }; .u-mB-0 { @extend %u-mB-0 };
+%u-mB-sm { margin-bottom: $sm }; .u-mB-sm { @extend %u-mB-sm };
+%u-mB-md { margin-bottom: $md }; .u-mB-md { @extend %u-mB-md };
+%u-mB-lg { margin-bottom: $lg }; .u-mB-lg { @extend %u-mB-lg };
+
+%u-m-sm { margin: $sm; }
+.u-m-sm { @extend %u-m-sm };
+
+%u-m-md { margin: $md; }
+.u-m-md { @extend %u-m-md };
+
+%u-m-lg { margin: $lg; }
+.u-m-lg { @extend %u-m-lg };

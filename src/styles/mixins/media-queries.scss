@@ -1,0 +1,44 @@
+$screen-sm: 576px; // Small tablets and large smartphones (landscape view)
+$screen-md: 768px; // Small tablets (portrait view)
+$screen-lg: 992px; // Tablets and small desktops
+$screen-xl: 1200px; // Large tablets and desktops
+
+@mixin respond-to($media) {
+  @if $media == sm {
+    @media only screen and (min-width: 0) and (max-width: $screen-sm) { @content; }
+  }
+
+  @else if $media == md {
+    @media only screen and (min-width: $screen-sm + 1) { @content; }
+  }
+  @else if $media == md-only {
+    @media only screen and (min-width: $screen-sm + 1) and (max-width: $screen-md - 1) { @content; }
+  }
+
+  @else if $media == lg {
+    @media only screen and (min-width: $screen-md + 1) { @content; }
+  }
+  @else if $media == lg-only {
+    @media only screen and (min-width: $screen-md + 1) and (max-width: $screen-lg - 1) { @content; }
+  }
+
+  @else if $media == xl {
+    @media only screen and (min-width: $screen-xl) { @content; }
+  }
+}
+
+/*
+.profile-pic {
+  float: left;
+  width: 250px;
+  @include respond-to(handhelds) { width: 100% ;}
+  @include respond-to(medium-screens) { width: 125px; }
+  @include respond-to(wide-screens) { float: none; }
+}
+
+@include display();
+@include respond-to("sm") { @include display("sm-"); }
+@include respond-to("md") { @include display("md-"); }
+@include respond-to("lg") { @include display("lg-"); }
+@include respond-to("xl") { @include display("xl-"); }
+*/

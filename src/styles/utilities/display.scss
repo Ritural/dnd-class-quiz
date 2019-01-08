@@ -1,0 +1,28 @@
+// ============
+// Display classes
+// ============
+
+@mixin display($namespace: "") {
+  .u-#{$namespace}hidden { display: none !important; }
+
+  .u-#{$namespace}inlineBlock { display: inline-block !important; }
+  .u-#{$namespace}block { display: block !important; }
+
+  .u-#{$namespace}posRel { position: relative !important; }
+  .u-#{$namespace}posAbs { position: absolute !important; }  
+}
+
+@include display();
+@include respond-to("sm") { @include display("sm-"); }
+@include respond-to("md") { @include display("md-"); }
+@include respond-to("md-only") { @include display("md-only-"); }
+@include respond-to("lg") { @include display("lg-"); }
+@include respond-to("lg-only") { @include display("lg-only-"); }
+@include respond-to("xl") { @include display("xl-"); }
+
+%u-cursorPointer {
+  cursor: pointer;  
+};
+.u-cursorPointer {
+  @extend %u-cursorPointer;
+};

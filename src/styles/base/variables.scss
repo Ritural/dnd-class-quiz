@@ -1,0 +1,43 @@
+// ==============
+// Variables
+// ==============
+
+// ==============
+// Spacing Units
+// ==============
+
+$v: 16px;
+$h: $v;
+$borderRadius: 4px;
+
+// ==============
+// Colours
+// ==============
+
+$white: #ffffff;
+$black:     #000000;
+$grey-dark: #8b8b8b; // "Thunder Grey"
+$grey-light: #c5c5c5;
+
+$text: $black;
+
+$border: $grey-dark;
+
+$buttonColour: $black;
+
+$btnCol: $buttonColour;
+$btnHoverCol: lighten($buttonColour, 10%);
+// $btnHoverCol: darken($buttonColour, 10%);
+
+// Development only
+$debug:   #ff00dc;
+
+// ==============
+// Font Variables
+// ==============
+
+$base-font-color: $text;
+$base-font-size:    16px;
+$base-font-size-sm: 14px;
+$base-font-size-xs: 12px;
+$base-line-height:  1.5;
