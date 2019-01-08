@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Switch } from 'react-router';
 import { Route } from 'react-router-dom';
 
-import Controller from 'components/start-here';
+import StartHere from 'components/start-here';
 import NotFound from 'components/not-found';
 
 export default class Home extends React.Component {
@@ -11,7 +11,7 @@ export default class Home extends React.Component {
       <div className='Home'>
         <main className='Content'>
           <Switch>
-            <Route exact={true} path='/' component={Controller} />
+            <Route exact={true} path='/' component={StartHere} />
             <Route component={NotFound} />
           </Switch>
         </main>

@@ -7,11 +7,11 @@ interface IProps {
 interface IState {
 }
 
-export default class Controller extends React.Component<IProps, IState> {
+export default class StartHere extends React.Component<IProps, IState> {
   render() {
     return (
-      <div className='Controller'>
-        <h3>This where you can start</h3>
+      <div className='StartHere'>
+        <h3>You can start here</h3>
       </div>
     );
   }
