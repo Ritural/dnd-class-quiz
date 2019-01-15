@@ -1,7 +1,7 @@
 {
-  "name": "not-google-slides",
+  "name": "base-typescript-react-webpack-project",
   "version": "1.0.0",
-  "description": "A presentation framework",
+  "description": "A Base Project",
   "main": "index.tsx",
   "author": "Kallan Jones",
   "license": "MIT",
@@ -25,7 +25,7 @@
     "@babel/preset-typescript": "^7.1.0",
     "@types/classnames": "^2.2.6",
     "@types/jest": "^23.3.10",
-    "@types/react": "^16.4.8",
+    "@types/react": "^16.7.18",
     "@types/react-dom": "^16.0.7",
     "@types/react-redux": "^6.0.6",
     "@types/react-router": "^4.0.30",
