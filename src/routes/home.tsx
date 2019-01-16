@@ -9,14 +9,14 @@ import ReduxExample from 'components/redux-example';
 export default class Home extends React.Component {
   render() {
     return (
-      <div className='Home'>
+      <div className='Home u-m-lg'>
         
         <header>
-          <Link to='/'>Home</Link>
-          <Link to='/redux-example'>Redux Example</Link>
+          <Link className='' to='/'>Home</Link>
+          <Link className='u-pL-lg' to='/redux-example'>Redux Example</Link>
         </header>
 
-        <main className='Content'>
+        <main className='Content u-m-lg'>
           <Switch>
             <Route exact={true} path='/' component={StartHere} />
             <Route exact={true} path='/redux-example' component={ReduxExample} />
