@@ -13,7 +13,7 @@ export const EXAMPLE_INITIAL_STATE: IExampleState = {
   count: 0,
 };
 
-export default function itemsReducer(state = EXAMPLE_INITIAL_STATE, action: IAction): IExampleState {
+export function exampleReducer(state = EXAMPLE_INITIAL_STATE, action: IAction): IExampleState {
 
   switch (action.type) {
     case ExampleActionTypes.INCREMENT_COUNT:

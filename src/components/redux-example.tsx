@@ -13,7 +13,7 @@ interface IProps extends IExampleState, IDispatchFromProps {
 interface IState {
 }
 
-class ReduxExample extends React.Component<IProps, IState> {
+class ReduxExampleClass extends React.Component<IProps, IState> {
  render() {
    const {
      count,
@@ -51,4 +51,4 @@ function mapDispatchToProps(dispatch: Dispatch) {
     setCount: actionSetCount,
   }, dispatch);
 }
-export default connect<IExampleState, IDispatchFromProps>(mapStateToProps, mapDispatchToProps)(ReduxExample);
+export const ReduxExample = connect<IExampleState, IDispatchFromProps>(mapStateToProps, mapDispatchToProps)(ReduxExampleClass);

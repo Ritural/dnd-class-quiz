@@ -6,11 +6,11 @@ import posed, { PoseGroup } from "react-pose";
 
 import 'styles/app.scss';
 
-import store from 'state/main-reducer';
+import { store } from 'state/main-reducer';
 
-import Home from 'routes/home';
-import NotFound from "components/not-found";
-import ReduxExample from "components/redux-example";
+import { Home } from 'routes/home';
+import { NotFound } from "components/not-found";
+import { ReduxExample } from "components/redux-example";
 
 const RouteContainer = posed.div({
   enter: {

@@ -7,7 +7,7 @@ interface IProps {
 interface IState {
 }
 
-export default class StartHere extends React.Component<IProps, IState> {
+export class Home extends React.Component<IProps, IState> {
   render() {
     return (
       <div className='Home'>

@@ -7,7 +7,7 @@ interface IProps {
 interface IState {
 }
 
-export default class NotFound extends React.Component<IProps, IState> {
+export class NotFound extends React.Component<IProps, IState> {
   render() {
     return (
       <div className='NotFound'>
