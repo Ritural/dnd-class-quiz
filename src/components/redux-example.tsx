@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import { IExampleState } from 'state/reducers/example';
-import { actionIncrementCount, actionSetCount } from 'state/actions/example';
+import { IExampleState } from 'state/modules/example/reducer';
+import { actionIncrementCount, actionSetCount } from 'state/modules/example/actions';
 import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { IReducerState } from 'state/main-reducer';
