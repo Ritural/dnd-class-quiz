@@ -9,8 +9,8 @@ import 'styles/app.scss';
 import { store } from 'state/main-reducer';
 
 import { Home } from 'routes/home';
-import { NotFound } from "components/not-found";
-import { ReduxExample } from "components/redux-example";
+import { NotFound } from "routes/not-found";
+import { ReduxExample } from "routes/redux-example";
 
 const RouteContainer = posed.div({
   enter: {
