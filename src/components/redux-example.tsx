@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { IExampleState } from 'state/modules/example/reducer';
+import { IExampleState } from 'state/modules/example/reducers';
 import { actionIncrementCount, actionSetCount } from 'state/modules/example/actions';
 import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';

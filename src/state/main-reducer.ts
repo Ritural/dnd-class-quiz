@@ -1,5 +1,5 @@
 import { combineReducers, createStore } from 'redux';
-import { exampleReducer, IExampleState } from 'state/modules/example/reducer';
+import { exampleReducer, IExampleState } from 'state/modules/example/reducers';
 
 export interface IReducerState {
   exampleState?: IExampleState;
