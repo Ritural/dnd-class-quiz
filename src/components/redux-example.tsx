@@ -32,14 +32,14 @@ class ReduxExample extends React.Component<IProps, IState> {
  }
 }
 
-
 interface IDispatchFromProps {
   incrementCount: typeof actionIncrementCount;
   setCount: typeof actionSetCount;
 }
 
 function mapStateToProps(state: IReducerState) {
-  const itemsState = state.exampleState || {} as IExampleState;
+  const itemsState = state.exampleState || ({} as IExampleState);
+
   return {
     count: itemsState.count,
   };
