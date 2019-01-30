@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-import { IExampleState } from 'state/modules/example/reducers';
-import { actionIncrementCount, actionSetCount } from 'state/modules/example/actions';
+import { IExampleState } from 'store/modules/example/reducers';
+import { actionIncrementCount, actionSetCount } from 'store/modules/example/actions';
 import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import { IReducerState } from 'state/main-reducer';
+import { IReducerState } from 'store/main-reducer';
 
 interface IProps extends IExampleState, IDispatchFromProps {
 }

@@ -32,7 +32,7 @@
     "paths": {
       "public/*": [ "public/*" ],
       "components/*": [ "src/components/*" ],
-      "state/*": [ "src/state/*" ],
+      "store/*": [ "src/store/*" ],
       "routes/*": [ "src/routes/*" ],
       "helpers/*": [ "src/helpers/*" ],
       "utilities/*": [ "src/utilities/*" ]

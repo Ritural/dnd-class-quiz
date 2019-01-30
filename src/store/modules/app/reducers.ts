@@ -1,4 +1,4 @@
-import { AppActionTypes } from "state/modules/app/actions";
+import { AppActionTypes } from "store/modules/app/actions";
 
 interface IAction {
   type: keyof typeof AppActionTypes;

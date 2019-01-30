@@ -1,4 +1,4 @@
-import { ExampleActionTypes } from 'state/modules/example/actions';
+import { ExampleActionTypes } from 'store/modules/example/actions';
 
 interface IAction {
   type: keyof typeof ExampleActionTypes;

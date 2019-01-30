@@ -6,7 +6,7 @@ import posed, { PoseGroup } from "react-pose";
 
 import 'styles/app.scss';
 
-import { store } from 'state/main-reducer';
+import { store } from 'store/main-reducer';
 
 import { Home } from 'routes/home';
 import { NotFound } from "routes/not-found";

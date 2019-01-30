@@ -1,15 +1,15 @@
 import { combineReducers, createStore, compose, applyMiddleware } from 'redux';
-import { exampleReducer, IExampleState } from 'state/modules/example/reducers';
+import { exampleReducer, IExampleState } from 'store/modules/example/reducers';
 import createSagaMiddleware from '@redux-saga/core';
 import { createResponsiveStateReducer, responsiveStoreEnhancer } from 'redux-responsive';
 import { createBrowserHistory } from "history";
 import { connectRouter, routerMiddleware } from "connected-react-router";
 
-import { BREAKPOINTS } from 'state/modules/app/constants';
-// import { rootSaga } from "state/modules/main-saga";
+import { BREAKPOINTS } from 'store/modules/app/constants';
+// import { rootSaga } from "store/modules/main-saga";
 
 export interface IReducerState {
-  exampleState: IExampleState;
+  exampleState?: IExampleState;
 } 
 
 export const history = createBrowserHistory();

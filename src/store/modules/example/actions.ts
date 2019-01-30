@@ -1,4 +1,4 @@
-import { createAction } from "state/action-helpers";
+import { createAction } from "store/action-helpers";
 
 export const ExampleActionTypes = {
   INCREMENT_COUNT: `[example]-INCREMENT`,
@@ -10,4 +10,7 @@ export const ExampleActionTypes = {
 };
 
 export const actionIncrementCount = () => createAction(ExampleActionTypes.INCREMENT_COUNT);
+// export type ActionSetCountType {
+//   count: number;
+// }
 export const actionSetCount = (count: number) => createAction(ExampleActionTypes.SET_COUNT, count);
