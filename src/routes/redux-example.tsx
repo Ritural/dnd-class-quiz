@@ -13,23 +13,23 @@ interface IProps extends IExampleState, IDispatchFromProps {
 interface IState {
 }
 
-class ReduxExampleClass extends React.Component<IProps, IState> {
- render() {
-   const {
-     count,
-     incrementCount,
-     setCount,
-   } = this.props;
+export class Presenter extends React.Component<IProps, IState> {
+  render() {
+    const { count, incrementCount, setCount } = this.props;
 
-   return (
-     <div className='ReduxExample'>
+    return (
+      <div className='ReduxExample'>
         <h1>Count: {count}</h1>
 
-        <button className='Button' onClick={() => incrementCount()}>Increment by 1</button>
-        <button className='Button Button--secondary' onClick={() => setCount(0)}>Set count to 0</button>
-     </div>
-   );
- }
+        <button className='Button' onClick={() => incrementCount()}>
+          Increment by 1
+        </button>
+        <button className='Button Button--secondary' onClick={() => setCount(0)}>
+          Set count to 0
+        </button>
+      </div>
+    );
+  }
 }
 
 interface IDispatchFromProps {
@@ -51,4 +51,4 @@ function mapDispatchToProps(dispatch: Dispatch) {
     setCount: actionSetCount,
   }, dispatch);
 }
-export const ReduxExample = connect<IExampleState, IDispatchFromProps>(mapStateToProps, mapDispatchToProps)(ReduxExampleClass);
+export const ReduxExample = connect<IExampleState, IDispatchFromProps>(mapStateToProps, mapDispatchToProps)(Presenter);
