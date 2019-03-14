@@ -23,25 +23,17 @@
     "baseUrl": "./",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "lib": [
-      "dom",
-      "es6",
-      "scripthost",
-      "es2015.promise"
-    ],
+    "lib": ["dom", "es6", "scripthost", "es2015.promise"],
     "paths": {
-      "public/*": [ "public/*" ],
-      "components/*": [ "src/components/*" ],
-      "store/*": [ "src/store/*" ],
-      "routes/*": [ "src/routes/*" ],
-      "helpers/*": [ "src/helpers/*" ],
-      "utilities/*": [ "src/utilities/*" ]
+      "src/*": ["src/"],
+      "public/*": ["public/*"],
+      "components/*": ["src/components/*"],
+      "store/*": ["src/store/*"],
+      "routes/*": ["src/routes/*"],
+      "helpers/*": ["src/helpers/*"],
+      "utilities/*": ["src/utilities/*"]
     }
   },
-  "exclude": [
-    "node_modules"
-  ],
-  "include": [
-    "./src/**/*"
-  ]
+  "exclude": ["node_modules"],
+  "include": ["./src/**/*", "./definitions/*"]
 }
