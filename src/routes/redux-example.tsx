@@ -1,19 +1,17 @@
 import * as React from 'react';
-
-import { IExampleState } from 'store/modules/example/reducers';
-import { actionIncrementCount, actionSetCount } from 'store/modules/example/actions';
-import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
+import { bindActionCreators, Dispatch } from 'redux';
+
 import { IReducerState } from 'store/main-reducer';
+import {
+  actionIncrementCount,
+  actionSetCount,
+} from 'store/modules/example/actions';
+import { IExampleState } from 'store/modules/example/reducers';
 
-interface IProps extends IExampleState, IDispatchFromProps {
-}
+interface IProps extends IExampleState, IDispatchFromProps {}
 
-// tslint:disable-next-line:no-empty-interface
-interface IState {
-}
-
-export class Presenter extends React.Component<IProps, IState> {
+export class Presenter extends React.Component<IProps> {
   render() {
     const { count, incrementCount, setCount } = this.props;
 
@@ -24,7 +22,10 @@ export class Presenter extends React.Component<IProps, IState> {
         <button className='Button' onClick={() => incrementCount()}>
           Increment by 1
         </button>
-        <button className='Button Button--secondary' onClick={() => setCount(0)}>
+        <button
+          className='Button Button--secondary'
+          onClick={() => setCount(0)}
+        >
           Set count to 0
         </button>
       </div>
@@ -46,9 +47,15 @@ function mapStateToProps(state: IReducerState) {
 }
 
 function mapDispatchToProps(dispatch: Dispatch) {
-  return bindActionCreators({
-    incrementCount: actionIncrementCount,
-    setCount: actionSetCount,
-  }, dispatch);
+  return bindActionCreators(
+    {
+      incrementCount: actionIncrementCount,
+      setCount: actionSetCount,
+    },
+    dispatch,
+  );
 }
-export const ReduxExample = connect<IExampleState, IDispatchFromProps>(mapStateToProps, mapDispatchToProps)(Presenter);
+export const ReduxExample = connect<IExampleState, IDispatchFromProps>(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Presenter);

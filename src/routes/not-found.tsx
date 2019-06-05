@@ -1,11 +1,9 @@
 import * as React from 'react';
 
 // tslint:disable-next-line:no-empty-interface
-interface IProps {
-}
+interface IProps {}
 // tslint:disable-next-line:no-empty-interface
-interface IState {
-}
+interface IState {}
 
 export class NotFound extends React.Component<IProps, IState> {
   render() {
