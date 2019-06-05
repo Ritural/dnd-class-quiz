@@ -1,27 +1,31 @@
-# Base Project
+# Boilerplate!!!
 
-*Last updated: 08 Jan 2019*
+_Last updated: 14 Mar 2019_
 
 ## Overview
 
-This README outlines the details of collaborating on getting the Base project website up and running on your development machine.
+This boilerplate consists of Webpack, TypeScript, React, Redux, and SCSS.
+
+I often find myself creating new projects so I decided to make a boilerplate as a nice starting point.
 
 ## Application structure
 
-This repo contains the frontend application
+```
+- README.md
+```
 
 ## Prerequisites
 
 You'll need the following pre-requisites installed to run the project
 
-* Git
-* Node.js
-* nvm
-* yarn
+- Git
+- Node.js
+- nvm
+- yarn
 
-## Installation
+### Getting Started
 
-### Steps
+1. Clone the repo - `git clone git@github.com:Ritural/webpack-typescript-react-boilerplate.git`
 1. Make sure you're using the correct node version with `nvm use`
-2. In the root folder run `yarn install`.
-3. Then run `yarn start`.
+1. In the root folder run `yarn install`.
+1. Then run `yarn start`.
