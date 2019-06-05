@@ -1,21 +1,27 @@
 {
   "defaultSeverity": "error",
-  "extends": [
-    "tslint:recommended",
-    "tslint-react"
-  ],
+  "extends": ["tslint-config-prettier", "tslint:recommended", "tslint-react"],
   "rules": {
-    "quotemark": [
-      true,
-      "single"
-    ],
+    "quotemark": [true, "single"],
     "jsx-no-multiline-js": false,
     "ordered-imports": [
       true,
       {
-        "grouped-imports": true,
         "import-sources-order": "lowercase-last",
-        "named-imports-order": "case-insensitive"
+        "named-imports-order": "case-insensitive",
+        "grouped-imports": true,
+        "groups": [
+          {
+            "name": "Third Party Packages",
+            "match": "/^@types/classnames$|^@types/jest$|^@types/react$|^@types/react-dom$|^@types/react-redux$|^@types/react-router$|^@types/react-router-dom$|^@types/webpack-env$|^classnames$|^connected-react-router$|^history$|^jest$|^react$|^react-dom$|^react-pose$|^react-redux$|^react-router$|^react-router-dom$|^react-test-renderer$|^redux$|^redux-devtools$|^redux-responsive$|^redux-saga$|^ts-jest$|^tslint$|^tslint-react$|^typescript$|^@redux-saga/",
+            "order": 10
+          },
+          {
+            "name": "Our files",
+            "match": "",
+            "order": 20
+          }
+        ]
       }
     ],
     "member-access": false,
@@ -34,5 +40,9 @@
     "max-classes-per-file": false,
     "no-string-literal": false,
     "jsx-self-close": false,
+    "jsx-no-lambda": false,
+    "array-bracket-spacing": "always",
+    "no-relative-imports": true,
+    "arrow-parens": true
   }
 }
