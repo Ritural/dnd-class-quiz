@@ -14,7 +14,9 @@ export interface IIncrementCountAction {
 
 export interface ISetCountAction {
   type: typeof SET_COUNT;
-  payload: number;
+  payload: {
+    count: number;
+  };
 }
 
 export type ExampleActionTypes = IIncrementCountAction | ISetCountAction;
@@ -30,6 +32,8 @@ export function actionIncrementCount(): ExampleActionTypes {
 export function actionSetCount(count: number): ExampleActionTypes {
   return {
     type: SET_COUNT,
-    payload: count,
+    payload: {
+      count,
+    },
   };
 }

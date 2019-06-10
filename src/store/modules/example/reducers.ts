@@ -18,18 +18,17 @@ export function exampleReducer(
 ) {
   switch (action.type) {
     case INCREMENT_COUNT:
-      const count = state.count + 1;
+      const newCount = state.count + 1;
+      return {
+        ...state,
+        count: newCount,
+      };
+    case SET_COUNT:
+      const { count } = action.payload;
 
       return {
         ...state,
         count,
-      };
-    case SET_COUNT:
-      const newCount = action.payload;
-
-      return {
-        ...state,
-        count: newCount,
       };
     default:
       return state;
