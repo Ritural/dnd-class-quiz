@@ -90,7 +90,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               // This can be changed to include [hash:8], (:8 should restrict it to 8 characters)
-              name: 'public/[name].[ext]'
+              name: '[path][name].[ext]'
             }
           }
         ]
