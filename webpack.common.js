@@ -90,6 +90,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               // This can be changed to include [hash:8], (:8 should restrict it to 8 characters)
+              // @NOTE This could be used in production to cache bust - isProduction ? '[hash].[ext]' :
               name: '[path][name].[ext]'
             }
           }
