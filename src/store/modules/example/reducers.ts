@@ -8,14 +8,14 @@ export interface IExampleState {
   count: number;
 }
 
-const INITIAL_STATE: IExampleState = {
+export const INITIAL_STATE: IExampleState = {
   count: 0,
 };
 
 export function exampleReducer(
   state = INITIAL_STATE,
   action: ExampleActionTypes,
-): IExampleState {
+) {
   switch (action.type) {
     case INCREMENT_COUNT:
       const count = state.count + 1;

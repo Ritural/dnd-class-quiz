@@ -8,9 +8,11 @@ import {
 } from 'redux-responsive';
 
 import { exampleReducer, IExampleState } from 'store/modules/example/reducers';
+import { appReducer, IAppState } from './modules/app/reducers';
 // import { rootSaga } from "store/modules/main-saga";
 
 export interface IReducerState {
+  app: IAppState;
   exampleState: IExampleState;
 }
 
@@ -38,6 +40,7 @@ const rootReducer = combineReducers({
     desktop: '(min-width: 1280px) and (max-width:1599.98px)',
     wideScreen: '(min-width: 1600px)',
   }),
+  app: appReducer,
   exampleState: exampleReducer,
   router: connectRouter(history),
 });

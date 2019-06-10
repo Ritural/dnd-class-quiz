@@ -13,6 +13,7 @@ interface IProps {
   setCount: typeof actionSetCount;
 }
 
+// Export presenter for testing
 export class Presenter extends React.Component<IProps> {
   render() {
     const { count, incrementCount, setCount } = this.props;

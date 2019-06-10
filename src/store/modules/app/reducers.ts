@@ -1,35 +1,31 @@
-import { AppActionTypes } from "store/modules/app/actions";
+import { AppActionTypes, TOGGLE_MENU } from 'store/modules/app/actions';
 
-interface IAction {
-  type: keyof typeof AppActionTypes;
-  payload: any; // @TODO Figure out a good way to type the payload
-}
-
-interface IAppState {
-  currentLocation: string;
+export interface IAppState {
   isMenuOpen: boolean;
 }
 
 export const initialState: IAppState = {
-  currentLocation: "",
   isMenuOpen: false,
 };
 
-const reducerApp = (state = initialState, action: IAction) => {
+export const appReducer = (state = initialState, action: AppActionTypes) => {
+  const { payload } = action;
+
   switch (action.type) {
-    case AppActionTypes.LOCATION_CHANGE:
+    case TOGGLE_MENU:
+      const { menuOverride } = payload;
+
+      let isMenuOpen = !state.isMenuOpen;
+
+      if (menuOverride !== undefined) {
+        isMenuOpen = menuOverride;
+      }
+
       return {
         ...state,
-        currentLocation: action.payload.location
-      };
-    case AppActionTypes.TOGGLE_MENU:
-      return {
-        ...state,
-        isMenuOpen: !state.isMenuOpen
+        isMenuOpen,
       };
     default:
       return state;
   }
 };
-
-export default reducerApp;

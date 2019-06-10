@@ -1,9 +1,19 @@
-import { createAction } from "store/action-helpers";
+export const TOGGLE_MENU = '[APP]-TOGGLE_MENU';
 
-export const AppActionTypes = {
-  TOGGLE_MENU: `[app]-TOGGLE_MENU`,
-  LOCATION_CHANGE: `[app]-LOCATION_CHANGE`,
-};
+export interface IToggleMenu {
+  type: typeof TOGGLE_MENU;
+  payload: {
+    menuOverride?: boolean;
+  };
+}
 
-export const actionIncrementCount = () => createAction(AppActionTypes.TOGGLE_MENU);
-export const actionSetCount = () => createAction(AppActionTypes.LOCATION_CHANGE);
+export type AppActionTypes = IToggleMenu;
+
+export function actionToggleMenu(menuOverride?: boolean): AppActionTypes {
+  return {
+    type: TOGGLE_MENU,
+    payload: {
+      menuOverride,
+    },
+  };
+}
