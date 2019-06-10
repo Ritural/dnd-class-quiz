@@ -7,12 +7,11 @@ import {
   responsiveStoreEnhancer,
 } from 'redux-responsive';
 
-import { BREAKPOINTS } from 'store/modules/app/constants';
 import { exampleReducer, IExampleState } from 'store/modules/example/reducers';
 // import { rootSaga } from "store/modules/main-saga";
 
 export interface IReducerState {
-  exampleState?: IExampleState;
+  exampleState: IExampleState;
 }
 
 export const history = createBrowserHistory();
@@ -32,21 +31,18 @@ if (process.env.REACT_APP_ENVIRONMENT !== 'production') {
 }
 
 const rootReducer = combineReducers({
-  browser: createResponsiveStateReducer(
-    {
-      mobile: BREAKPOINTS.MOBILE,
-      tablet: BREAKPOINTS.TABLET,
-      laptop: BREAKPOINTS.LAPTOP,
-      desktop: BREAKPOINTS.DESKTOP,
-    },
-    {
-      // This assigns anything bigger than desktop as widescreen
-      infinity: 'widescreen',
-    },
-  ),
+  browser: createResponsiveStateReducer({
+    mobile: '(max-width: 767.98px)',
+    tablet: '(min-width: 768px) and (max-width:1023.98px)',
+    laptop: '(min-width: 1024px) and (max-width:1279.98px)',
+    desktop: '(min-width: 1280px) and (max-width:1599.98px)',
+    wideScreen: '(min-width: 1600px)',
+  }),
   exampleState: exampleReducer,
   router: connectRouter(history),
 });
+
+export type AppState = ReturnType<typeof rootReducer>;
 
 export const store = createStore(
   rootReducer,

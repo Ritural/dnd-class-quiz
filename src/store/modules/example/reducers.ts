@@ -1,35 +1,36 @@
-import { ExampleActionTypes } from 'store/modules/example/actions';
-
-interface IAction {
-  type: keyof typeof ExampleActionTypes;
-  payload: any; // @TODO Figure out a good way to type the payload
-}
+import {
+  ExampleActionTypes,
+  INCREMENT_COUNT,
+  SET_COUNT,
+} from 'store/modules/example/actions';
 
 export interface IExampleState {
   count: number;
 }
 
-export const EXAMPLE_INITIAL_STATE: IExampleState = {
+const INITIAL_STATE: IExampleState = {
   count: 0,
 };
 
-export function exampleReducer(state = EXAMPLE_INITIAL_STATE, action: IAction): IExampleState {
-
+export function exampleReducer(
+  state = INITIAL_STATE,
+  action: ExampleActionTypes,
+): IExampleState {
   switch (action.type) {
-    case ExampleActionTypes.INCREMENT_COUNT:
+    case INCREMENT_COUNT:
       const count = state.count + 1;
 
       return {
         ...state,
         count,
-      }
-    case ExampleActionTypes.SET_COUNT:
+      };
+    case SET_COUNT:
       const newCount = action.payload;
 
       return {
         ...state,
         count: newCount,
-      }
+      };
     default:
       return state;
   }

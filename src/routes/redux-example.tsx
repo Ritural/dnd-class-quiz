@@ -1,15 +1,17 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators, Dispatch } from 'redux';
 
-import { IReducerState } from 'store/main-reducer';
+import { AppState } from 'store/main-reducer';
 import {
   actionIncrementCount,
   actionSetCount,
 } from 'store/modules/example/actions';
-import { IExampleState } from 'store/modules/example/reducers';
 
-interface IProps extends IExampleState, IDispatchFromProps {}
+interface IProps {
+  count: number;
+  incrementCount: typeof actionIncrementCount;
+  setCount: typeof actionSetCount;
+}
 
 export class Presenter extends React.Component<IProps> {
   render() {
@@ -33,29 +35,18 @@ export class Presenter extends React.Component<IProps> {
   }
 }
 
-interface IDispatchFromProps {
-  incrementCount: typeof actionIncrementCount;
-  setCount: typeof actionSetCount;
-}
-
-function mapStateToProps(state: IReducerState) {
-  const itemsState = state.exampleState || ({} as IExampleState);
-
+function mapStateToProps(state: AppState) {
   return {
-    count: itemsState.count,
+    count: state.exampleState.count,
   };
 }
 
-function mapDispatchToProps(dispatch: Dispatch) {
-  return bindActionCreators(
-    {
-      incrementCount: actionIncrementCount,
-      setCount: actionSetCount,
-    },
-    dispatch,
-  );
-}
-export const ReduxExample = connect<IExampleState, IDispatchFromProps>(
+const dispatchProps = {
+  incrementCount: actionIncrementCount,
+  setCount: actionSetCount,
+};
+
+export const ReduxExample = connect(
   mapStateToProps,
-  mapDispatchToProps,
+  dispatchProps,
 )(Presenter);
