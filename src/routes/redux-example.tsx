@@ -14,7 +14,7 @@ interface IProps {
 }
 
 // Export presenter for testing
-export class Presenter extends React.Component<IProps> {
+export class ReduxExampleComponent extends React.Component<IProps> {
   render() {
     const { count, incrementCount, setCount } = this.props;
 
@@ -50,4 +50,4 @@ const dispatchProps = {
 export const ReduxExample = connect(
   mapStateToProps,
   dispatchProps,
-)(Presenter);
+)(ReduxExampleComponent);
