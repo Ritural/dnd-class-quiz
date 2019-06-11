@@ -4,6 +4,7 @@ import posed, { PoseGroup } from 'react-pose';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+import { Footer } from 'components/footer';
 import { Header } from 'components/header';
 import { Home } from 'routes/home';
 import { NotFound } from 'routes/not-found';
@@ -37,7 +38,7 @@ class App extends React.Component {
                 <RouteContainer key={location.pathname}>
                   <Header />
 
-                  <main className='Content u-m-lg'>
+                  <main className='Content'>
                     <Switch>
                       <Route exact={true} path='/' component={Home} />
                       <Route
@@ -49,9 +50,7 @@ class App extends React.Component {
                     </Switch>
                   </main>
 
-                  <footer className='Footer'>
-                    <p>This is the footer</p>
-                  </footer>
+                  <Footer />
                 </RouteContainer>
               </PoseGroup>
             )}
