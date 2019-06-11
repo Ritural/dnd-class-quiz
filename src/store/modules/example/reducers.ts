@@ -1,15 +1,24 @@
 import {
   ExampleActionTypes,
+  FETCH_USERS,
+  FETCH_USERS_FAILURE,
+  FETCH_USERS_SUCCESS,
   INCREMENT_COUNT,
+  IUser,
   SET_COUNT,
 } from 'store/modules/example/actions';
 
 export interface IExampleState {
   count: number;
+  isLoading: boolean;
+  users: IUser[];
+  error?: string;
 }
 
 export const INITIAL_STATE: IExampleState = {
   count: 0,
+  isLoading: false,
+  users: [],
 };
 
 export function exampleReducer(
@@ -29,6 +38,27 @@ export function exampleReducer(
       return {
         ...state,
         count,
+      };
+    case FETCH_USERS:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case FETCH_USERS_SUCCESS:
+      const { users } = action.payload;
+
+      return {
+        ...state,
+        isLoading: false,
+        users,
+      };
+    case FETCH_USERS_FAILURE:
+      const { error } = action.payload;
+
+      return {
+        ...state,
+        isLoading: false,
+        error,
       };
     default:
       return state;
