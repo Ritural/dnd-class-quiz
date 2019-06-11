@@ -3,7 +3,7 @@ import * as React from 'react';
 import SVG_ICONS from 'public/svg/all';
 
 const ALL_ICONS = {
-  ...SVG_ICONS
+  ...SVG_ICONS,
   // IconMoon icons if they need to be in the project
 };
 
