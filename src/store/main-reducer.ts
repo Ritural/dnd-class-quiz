@@ -7,9 +7,9 @@ import {
   responsiveStoreEnhancer,
 } from 'redux-responsive';
 
+import { mainSaga } from 'store/main-saga';
 import { exampleReducer, IExampleState } from 'store/modules/example/reducers';
 import { appReducer, IAppState } from './modules/app/reducers';
-// import { rootSaga } from "store/modules/main-saga";
 
 export interface IReducerState {
   app: IAppState;
@@ -53,4 +53,4 @@ export const store = createStore(
   composeEnhancers(responsiveStoreEnhancer, applyMiddleware(...middleware)),
 );
 
-// sagaMiddleware.run(rootSaga);
+sagaMiddleware.run(mainSaga);
