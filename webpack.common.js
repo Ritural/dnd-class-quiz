@@ -5,6 +5,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
+const branch = require('child_process')
+  .execSync('git rev-parse --abbrev-ref HEAD')
+  .toString();
+
 module.exports = {
   entry: path.resolve(__dirname, 'src/index.tsx'),
   output: {
@@ -115,6 +119,16 @@ module.exports = {
       // both options are optional
       filename: '[name].css'
       // chunkFilename: "[id].css"
+    }),
+
+    new webpack.DefinePlugin({
+      'process.env': {
+        // Ensure the app gets the version number
+        VERSION: JSON.stringify(require('./package.json').version),
+        IS_DEVELOPMENT: !isProduction,
+        IS_PRODUCTION: isProduction,
+        CURRENT_BRANCH: JSON.stringify(branch)
+      }
     })
   ]
 };
