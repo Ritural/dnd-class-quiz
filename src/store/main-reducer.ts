@@ -8,8 +8,9 @@ import {
 } from 'redux-responsive';
 
 import { mainSaga } from 'store/main-saga';
+import { IS_PRODUCTION } from 'store/modules/app/constants';
+import { appReducer, IAppState } from 'store/modules/app/reducers';
 import { exampleReducer, IExampleState } from 'store/modules/example/reducers';
-import { appReducer, IAppState } from './modules/app/reducers';
 
 export interface IReducerState {
   app: IAppState;
@@ -23,7 +24,7 @@ const middleware = [routerMiddleware(history), sagaMiddleware];
 
 let composeEnhancers = compose;
 
-if (process.env.REACT_APP_ENVIRONMENT !== 'production') {
+if (!IS_PRODUCTION) {
   const composeWithDevToolsExtension = (window as any)
     .__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
 
