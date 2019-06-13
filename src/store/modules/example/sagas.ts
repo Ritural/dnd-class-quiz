@@ -1,9 +1,7 @@
-import { all, call, fork, put, takeEvery } from 'redux-saga/effects';
-import {
-  FETCH_USERS,
-  FETCH_USERS_FAILURE,
-  FETCH_USERS_SUCCESS,
-} from 'store/modules/example/actions';
+import { put, takeEvery } from 'redux-saga/effects';
+import { TYPE } from 'store/modules/example/actions';
+
+const { FETCH_USERS, FETCH_USERS_FAILURE, FETCH_USERS_SUCCESS } = TYPE;
 
 export function* exampleSaga() {
   yield takeEvery(FETCH_USERS, fetchUsers);

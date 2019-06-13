@@ -1,12 +1,4 @@
-import {
-  ExampleActionTypes,
-  FETCH_USERS,
-  FETCH_USERS_FAILURE,
-  FETCH_USERS_SUCCESS,
-  INCREMENT_COUNT,
-  IUser,
-  SET_COUNT,
-} from 'store/modules/example/actions';
+import { ExampleActionTypes, IUser, TYPE } from 'store/modules/example/actions';
 
 export interface IExampleState {
   count: number;
@@ -20,6 +12,14 @@ export const INITIAL_STATE: IExampleState = {
   isLoading: false,
   users: [],
 };
+
+const {
+  FETCH_USERS,
+  FETCH_USERS_FAILURE,
+  FETCH_USERS_SUCCESS,
+  INCREMENT_COUNT,
+  SET_COUNT,
+} = TYPE;
 
 export function exampleReducer(
   state = INITIAL_STATE,

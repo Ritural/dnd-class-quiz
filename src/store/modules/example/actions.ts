@@ -1,18 +1,20 @@
 // TYPES
 // @NOTE: [EXAMPLE] is the name of your redux module
-export const INCREMENT_COUNT = '[EXAMPLE]-INCREMENT';
-export const SET_COUNT = '[EXAMPLE]-SET';
-export const FETCH_USERS = '[EXAMPLE]-FETCH_USERS';
-export const FETCH_USERS_SUCCESS = '[EXAMPLE]-FETCH_USERS_SUCCESS';
-export const FETCH_USERS_FAILURE = '[EXAMPLE]-FETCH_USERS_FAILURE';
+export enum TYPE {
+  INCREMENT_COUNT = '[EXAMPLE]-INCREMENT',
+  SET_COUNT = '[EXAMPLE]-SET',
+  FETCH_USERS = '[EXAMPLE]-FETCH_USERS',
+  FETCH_USERS_SUCCESS = '[EXAMPLE]-FETCH_USERS_SUCCESS',
+  FETCH_USERS_FAILURE = '[EXAMPLE]-FETCH_USERS_FAILURE',
+}
 
 export interface IIncrementCountAction {
-  type: typeof INCREMENT_COUNT;
+  type: typeof TYPE.INCREMENT_COUNT;
   payload: null;
 }
 
 export interface ISetCountAction {
-  type: typeof SET_COUNT;
+  type: typeof TYPE.SET_COUNT;
   payload: {
     count: number;
   };
@@ -34,19 +36,19 @@ export interface IUser {
 }
 
 export interface IFetchUsersAction {
-  type: typeof FETCH_USERS;
+  type: typeof TYPE.FETCH_USERS;
   payload: null;
 }
 
 export interface IFetchUsersActionSuccess {
-  type: typeof FETCH_USERS_SUCCESS;
+  type: typeof TYPE.FETCH_USERS_SUCCESS;
   payload: {
     users: IUser[];
   };
 }
 
 export interface IFetchUsersActionFailure {
-  type: typeof FETCH_USERS_FAILURE;
+  type: typeof TYPE.FETCH_USERS_FAILURE;
   payload: {
     error: string;
   };
@@ -62,23 +64,23 @@ export type ExampleActionTypes =
 // ACTIONS
 export function actionIncrementCount(): ExampleActionTypes {
   return {
-    type: INCREMENT_COUNT,
+    type: TYPE.INCREMENT_COUNT,
     payload: null,
   };
 }
 
 export function actionSetCount(count: number): ExampleActionTypes {
   return {
-    type: SET_COUNT,
+    type: TYPE.SET_COUNT,
     payload: {
       count,
     },
   };
 }
 
-export function actionGetUsers(): IFetchUsersAction {
+export function actionGetUsers(): ExampleActionTypes {
   return {
-    type: FETCH_USERS,
+    type: TYPE.FETCH_USERS,
     payload: null,
   };
 }
