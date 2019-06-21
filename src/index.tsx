@@ -28,6 +28,14 @@ const RouteContainer = posed.div({
 });
 
 class App extends React.Component {
+  componentDidMount() {
+    // Remove .InitialLoader from root element
+    const rootEl = document.body.querySelector('.InitialLoader');
+    if (rootEl) {
+      rootEl.classList.remove('InitialLoader');
+    }
+  }
+
   render() {
     return (
       <Provider store={store}>

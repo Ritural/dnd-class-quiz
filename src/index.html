@@ -12,10 +12,33 @@
     <!-- <meta name="apple-mobile-web-app-status-bar-style" content="#243463" /> -->
 
     <!-- <link rel="icon" sizes="32x32" type="image/png" href="public/assets/icons/x.svg"> -->
+
+    <style>
+      #root,
+      .InitialLoader {
+        width: 100vw;
+        height: 100vh;
+      }
+      .InitialLoader {
+        /* @TODO Add you're own themes here */
+        background-color: skyblue;
+        background: skyblue linear-gradient(to bottom, skyblue, lightblue);
+      }
+      .InitialLoader-title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+      }
+    </style>
   </head>
 
   <body>
+    <div id="root" class="InitialLoader">
+      <!-- @NOTE: InitialLoader is removed when React renders -->
+      <h1 class="InitialLoader-title">Loading...</h1>
+    </div>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
   </body>
 </html>
