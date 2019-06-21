@@ -13,7 +13,7 @@ module.exports = {
   entry: path.resolve(__dirname, 'src/index.tsx'),
   output: {
     filename: '[name].bundle.js',
-    // chunkFilename: '[name].chunk',
+    // chunkFilename: '[name].[chunk]',
     path: path.resolve(__dirname, 'dist')
   },
   resolve: {
@@ -81,7 +81,7 @@ module.exports = {
       // },
       {
         type: 'javascript/auto',
-        test: /\.(svg|json)$/,
+        test: /\.(json)$/,
         exclude: /(node_modules|bower_components)/,
         loader: 'raw-loader'
       },
