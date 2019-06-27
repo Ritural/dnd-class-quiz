@@ -29,13 +29,13 @@ module.exports = {
       public: path.resolve(__dirname, 'public/')
     },
     // Add `.ts` and `.tsx` as a resolvable extension.
-    extensions: ['.ts', '.tsx', '.js']
+    extensions: ['.ts', '.tsx', '.js', '.jsx']
   },
 
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.tsx?|jsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
       },
