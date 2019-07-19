@@ -1,7 +1,7 @@
 {
-  "name": "base-typescript-react-webpack-project",
+  "name": "dnd-class-quiz",
   "version": "1.0.0",
-  "description": "A Base Project",
+  "description": "A website designed to help players choose a DnD 5th Edition class.",
   "main": "index.tsx",
   "author": "Kallan Jones",
   "license": "MIT",
