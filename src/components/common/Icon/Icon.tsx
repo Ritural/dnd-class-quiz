@@ -4,7 +4,6 @@ import SVG_ICONS from 'public/svg/all';
 
 const ALL_ICONS = {
   ...SVG_ICONS,
-  // IconMoon icons if they need to be in the project
 };
 
 type IconName = keyof typeof ALL_ICONS;
@@ -38,7 +37,6 @@ export class Icon extends React.Component<IProps> {
 
     return null;
 
-    // It's a icon font
-    // return icon;
+    // Other type of icons
   }
 }
