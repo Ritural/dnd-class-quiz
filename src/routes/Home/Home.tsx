@@ -1,16 +1,12 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
-// tslint:disable-next-line:no-empty-interface
-interface IProps {}
-// tslint:disable-next-line:no-empty-interface
-interface IState {}
+export const Home = () => (
+  <section className='Home'>
+    <h1>DnD 5th Edition Class Quiz</h1>
 
-export class Home extends React.Component<IProps, IState> {
-  render() {
-    return (
-      <div className='Home'>
-        <h1>DnD 5th Edition Class Quiz</h1>
-      </div>
-    );
-  }
-}
+    <Link className='Button' to='/quiz'>
+      Start quiz
+    </Link>
+  </section>
+);
