@@ -87,7 +87,7 @@ module.exports = {
       },
       {
         // Other images may change so we might need to include a hash
-        test: /\.(png|jpg|gif|ico|svg)$/,
+        test: /\.(png|jpg|gif|ico|svg|woff|woff2)$/,
         exclude: /(node_modules|bower_components)/,
         use: [
           {
