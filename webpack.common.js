@@ -24,6 +24,7 @@ module.exports = {
       styles: path.resolve(__dirname, 'src/styles'),
       helpers: path.resolve(__dirname, 'src/helpers'),
       utilities: path.resolve(__dirname, 'src/utilities'),
+      definitions: path.resolve(__dirname, 'src/definitions'),
 
       // Has to go at the end, some weird webpack behaviour
       public: path.resolve(__dirname, 'public/')
