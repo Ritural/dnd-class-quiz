@@ -2,30 +2,53 @@
 // TYPOGRAPHY
 // ============
 
+@font-face {
+  font-family: 'Alegreya Regular';
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+  unicode-range: U+000-5FF; // Download only latin glyphs
+  src: url('~public/fonts/Alegreya/Alegreya-Regular.woff2') format('woff2');
+}
+$alegreya-regular: 'Alegreya Regular', system-ui, sans-serif;
+
+// @font-face {
+//   font-family: 'Alegreya Bold';
+//   font-weight: normal;
+//   font-style: normal;
+//   font-display: fallback;
+//   unicode-range: U+000-5FF; // Download only latin glyphs
+//   src: local('Alegreya Bold'),
+//     url('~public/fonts/Alegreya/Alegreya-Bold.woff') format('woff');
+// }
+// $alegreya-bold: 'Alegreya Bold', system-ui, sans-serif;
+
 @mixin font($size: false, $line-height: false, $colour: false, $weight: false) {
-    font-family: $my-font;
-    @if $size { font-size: $size; }
-    @if $colour { color: $colour; }
-    @if $weight { font-weight: $weight; }
-    @if $line-height { line-height: $line-height; }
+  font-style: normal;
+
+  @if $size {
+    font-size: $size;
+  }
+  @if $colour {
+    color: $colour;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+  @if $line-height {
+    line-height: $line-height;
+  }
 }
 
 // Selectors ============
 %font-regular {
-  font-family: $my-font;
-  font-style: normal;
+  font-family: $alegreya-regular;
   font-weight: 400;
 }
-%font-regular-i {
-  font-family: $my-font;
-  font-style: italic;
-  font-weight: 400;
-}
-%font-bold {
-  font-family: $my-font;
-  font-style: normal;
-  font-weight: 700;
-}
+// %font-bold {
+//   font-family: $alegreya-bold;
+//   font-weight: 700;
+// }
 
 // ============
 // Text Elements
@@ -33,11 +56,10 @@
 
 html {
   @extend %font-regular !optional;
-  @include font($base-font-size);
-  line-height: $base-line-height;
-  color: $base-font-color;
+  @include font($base-font-size, $base-line-height, $base-font-color);
+
   // Better Font Rendering
-  font-feature-settings: "kern" 1;
+  font-feature-settings: 'kern' 1;
   font-kerning: normal;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -49,59 +71,63 @@ html {
 // 1. These are extendable, so do not also @extend font-weights from within these
 // 2. Define other styling (e.g. colors) outside the extendable class so we can safely reuse (@extend) these font size/weight combinations
 %h1 {
-  @include font(22px, 26px);
+  @include font(40px, 48px);
 }
 %h2 {
-  @include font(18px, 22px);
+  @include font(32px, 40px);
 }
 %h3 {
-  @include font(14px, 20px);
+  @include font(28px, 32px);
 }
 %h4 {
-  @include font(12px, 18px);
+  @include font(24px, 28px);
   letter-spacing: 0.4px;
   text-transform: uppercase;
 }
 
-h1, .h1 { 
+h1,
+.h1 {
   @extend %h1;
-  @extend %font-bold !optional;
+  // @extend %font-bold !optional;
 }
-h2, .h2 { 
+h2,
+.h2 {
   @extend %h2;
-  @extend %font-bold !optional;
+  // @extend %font-bold !optional;
 }
-h3, .h3 { 
+h3,
+.h3 {
   @extend %h3;
-  @extend %font-bold !optional;
+  // @extend %font-bold !optional;
 }
-h4, .h4 { 
+h4,
+.h4 {
   @extend %h4;
-  @extend %font-bold !optional;
+  // @extend %font-bold !optional;
 }
 
 // Not headings ============
 %p {
-  @include font(14px, 20px);
+  @include font(18px, 20px);
 }
-%small {
-  @include font(12px, 18px);
-}
+// %small {
+//   @include font(12px, 18px);
+// }
 
-p { 
+p {
   @extend %p;
 }
-small, .small {
-  @extend %small;
-}
+// small, .small {
+//   @extend %small;
+// }
 
-em, i { @extend %font-regular-i; }
-strong, b { @extend %font-bold !optional; }
+// em, i { @extend %font-regular-i; }
+// strong, b { @extend %font-bold !optional; }
 
-hr {
-  border: none;
-  margin-top: $v/2;
-  margin-bottom: $v/2;
-  background-color: $border;
-  height: 1px;
-}
+// hr {
+//   border: none;
+//   margin-top: $v/2;
+//   margin-bottom: $v/2;
+//   background-color: $border;
+//   height: 1px;
+// }

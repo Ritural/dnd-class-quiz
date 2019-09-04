@@ -15,7 +15,7 @@ $borderRadius: 4px;
 // ==============
 
 $white: #ffffff;
-$black:     #000000;
+$black: #000000;
 $grey-dark: #8b8b8b; // "Thunder Grey"
 $grey-light: #c5c5c5;
 
@@ -30,14 +30,14 @@ $btnHoverCol: lighten($buttonColour, 10%);
 // $btnHoverCol: darken($buttonColour, 10%);
 
 // Development only
-$debug:   #ff00dc;
+$debug: #ff00dc;
 
 // ==============
 // Font Variables
 // ==============
 
 $base-font-color: $text;
-$base-font-size:    16px;
+$base-font-size: 16px;
 $base-font-size-sm: 14px;
 $base-font-size-xs: 12px;
-$base-line-height:  1.5;
+$base-line-height: 1.5;
