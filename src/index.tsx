@@ -8,6 +8,7 @@ import { Footer } from 'components/Footer/Footer';
 import { Header } from 'components/Header/Header';
 import { Home } from 'routes/Home/Home';
 import { NotFound } from 'routes/NotFound/NotFound';
+import { Preview } from 'routes/Preview/Preview';
 import { ReduxExample } from 'routes/ReduxExample/ReduxExample';
 import { store } from 'store/main-reducer';
 import 'styles/app.scss';
@@ -43,17 +44,15 @@ class App extends React.Component {
           <Route
             render={({ location }) => (
               <PoseGroup>
-                <RouteContainer key={location.pathname}>
+                <RouteContainer className='Main' key={location.pathname}>
                   <Header />
 
                   <main className='Content'>
                     <Switch>
                       <Route exact={true} path='/' component={Home} />
-                      <Route
-                        exact={true}
-                        path='/redux-example'
-                        component={ReduxExample}
-                      />
+                      <Route exact={true} path='/redux-example' component={ReduxExample} />
+                      <Route exact={true} path='/preview' component={Preview} />
+
                       <Route component={NotFound} />
                     </Switch>
                   </main>
