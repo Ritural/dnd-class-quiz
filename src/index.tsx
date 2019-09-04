@@ -12,6 +12,7 @@ import { Preview } from 'routes/Preview/Preview';
 import { ReduxExample } from 'routes/ReduxExample/ReduxExample';
 import { store } from 'store/main-reducer';
 import 'styles/app.scss';
+import { Quiz } from 'routes/Quiz/Quiz';
 
 const RouteContainer = posed.div({
   enter: {
@@ -49,9 +50,11 @@ class App extends React.Component {
 
                   <main className='Content'>
                     <Switch>
-                      <Route exact={true} path='/' component={Home} />
-                      <Route exact={true} path='/redux-example' component={ReduxExample} />
-                      <Route exact={true} path='/preview' component={Preview} />
+                      <Route exact path='/' component={Home} />
+                      <Route exact path='/quiz' component={Quiz} />
+
+                      <Route exact path='/redux-example' component={ReduxExample} />
+                      <Route exact path='/preview' component={Preview} />
 
                       <Route component={NotFound} />
                     </Switch>
