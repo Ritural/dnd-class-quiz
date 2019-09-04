@@ -9,7 +9,7 @@ export class Home extends React.Component<IProps, IState> {
   render() {
     return (
       <div className='Home'>
-        <h3>You can start here</h3>
+        <h1>DnD 5th Edition Class Quiz</h1>
       </div>
     );
   }
