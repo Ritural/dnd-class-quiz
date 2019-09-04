@@ -1,4 +1,4 @@
-declare var process: {
+declare let process: {
   env: {
     VERSION: string;
     IS_PRODUCTION: string;
