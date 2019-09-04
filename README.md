@@ -66,3 +66,9 @@ You'll need the following pre-requisites installed to run the project
 #### Server
 
 - [ ] Create a server
+
+#### Websites
+
+- http://www.easydamus.com/character.html
+- https://www.google.com/search?q=dungeon+and+dragons+colours&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjl8KuevcXjAhVWcCsKHXbEAE8Q_AUIESgB&biw=1680&bih=916&dpr=2#imgrc=Axgrq2t1qLvqfM:
+- https://www.reddit.com/r/DnD/comments/aauw0m/oc_a_quick_and_easy_to_follow_guide_for_choosing/
