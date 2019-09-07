@@ -3,25 +3,25 @@
 // ============
 
 @font-face {
-  font-family: 'Alegreya Regular';
+  font-family: 'Muli Bold';
   font-weight: normal;
   font-style: normal;
   font-display: fallback;
   unicode-range: U+000-5FF; // Download only latin glyphs
-  src: url('~public/fonts/Alegreya/Alegreya-Regular.woff2') format('woff2');
+  src: local('Muli Bold'),
+    url('~public/fonts/Muli/muli-bold-webfont.woff2') format('woff2');
 }
-$alegreya-regular: 'Alegreya Regular', system-ui, sans-serif;
+$muli-bold: 'Muli Bold', system-ui, sans-serif;
 
-// @font-face {
-//   font-family: 'Alegreya Bold';
-//   font-weight: normal;
-//   font-style: normal;
-//   font-display: fallback;
-//   unicode-range: U+000-5FF; // Download only latin glyphs
-//   src: local('Alegreya Bold'),
-//     url('~public/fonts/Alegreya/Alegreya-Bold.woff') format('woff');
-// }
-// $alegreya-bold: 'Alegreya Bold', system-ui, sans-serif;
+@font-face {
+  font-family: 'Muli Regular';
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+  unicode-range: U+000-5FF; // Download only latin glyphs
+  src: url('~public/fonts/Muli/muli-regular-webfont.woff2') format('woff2');
+}
+$muli-regular: 'Muli Regular', system-ui, sans-serif;
 
 @mixin font($size: false, $line-height: false, $colour: false, $weight: false) {
   font-style: normal;
@@ -42,13 +42,13 @@ $alegreya-regular: 'Alegreya Regular', system-ui, sans-serif;
 
 // Selectors ============
 %font-regular {
-  font-family: $alegreya-regular;
+  font-family: $muli-regular;
   font-weight: 400;
 }
-// %font-bold {
-//   font-family: $alegreya-bold;
-//   font-weight: 700;
-// }
+%font-bold {
+  font-family: $muli-bold;
+  font-weight: 700;
+}
 
 // ============
 // Text Elements
