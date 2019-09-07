@@ -15,6 +15,8 @@ const ALL_RATINGS: IClassRating = {
 };
 
 const melee: IOption = {
+  id: 'a',
+  nextQuestion: '2',
   text: 'Up close and personal',
   rating: {
     fighter: 1,
@@ -26,43 +28,55 @@ const melee: IOption = {
 };
 
 const ranged: IOption = {
+  id: 'b',
+  nextQuestion: '2',
   text: 'From a distance',
   rating: {},
 };
 
 const meleeAndRanged: IOption = {
+  id: 'c',
+  nextQuestion: '2',
   text: 'Anywhere on the battlefield',
   rating: { ...ALL_RATINGS },
 };
 
 export const start: IQuestion = {
+  id: '1',
   text: 'How do you want to fight things?',
   options: [melee, ranged, meleeAndRanged],
 };
 
 const weapons: IOption = {
+  id: 'a',
+  nextQuestion: '',
   text: 'Swords, axes, daggers, bows, that sorta stuff',
   rating: {},
 };
 
 const spells: IOption = {
+  id: 'b',
+  nextQuestion: '',
   text: 'Magical explosions, different elements, spells spells spells!',
   rating: {},
 };
 
 const fists: IOption = {
+  id: 'c',
+  nextQuestion: '',
   text: 'My fists!',
   rating: {
     monk: 1,
   },
 };
 
-// const magicalWeapons: IOption = {
-//   text: '',
-//   rating: {},
-// };
-
 export const weaponOrMagic: IQuestion = {
-  text: 'How do you want to hit things?',
+  id: '2',
+  text: 'How do you want to fight with?',
   options: [weapons, spells, fists],
+};
+
+export const QUESTIONS: { [key: string]: IQuestion } = {
+  [start.id]: start,
+  [weaponOrMagic.id]: weaponOrMagic,
 };

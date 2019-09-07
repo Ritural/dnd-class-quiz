@@ -13,17 +13,21 @@ export interface IClassRating {
 }
 
 export interface ISubOption {
+  id: string;
   text: string;
   rating: IClassRating;
 }
 
 export interface IOption {
+  id: string;
   text: string;
   rating: IClassRating;
-  subChoice?: ISubOption[];
+  nextQuestion: string;
+  // subChoice?: ISubOption[];
 }
 
 export interface IQuestion {
+  id: string;
   text: string;
   answer?: string;
   options: IOption[]
