@@ -15,8 +15,4 @@ export const MENU_LINKS: IMenuLink[] = [
     label: 'Home',
     to: '/',
   },
-  {
-    label: 'Redux Example',
-    to: '/redux-example',
-  },
 ];
