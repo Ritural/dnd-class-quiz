@@ -11,6 +11,7 @@ import { NotFound } from 'routes/NotFound/NotFound';
 import { Preview } from 'routes/Preview/Preview';
 import { store } from 'store/main-reducer';
 import { Quiz } from 'routes/Quiz/Quiz';
+import { Complete } from 'routes/Complete/Complete';
 
 import 'styles/app.scss';
 
@@ -52,6 +53,7 @@ class App extends React.Component {
                     <Switch>
                       <Route exact path='/' component={Home} />
                       <Route exact path='/quiz' component={Quiz} />
+                      <Route exact path='/complete' component={Complete} />
 
                       <Route exact path='/preview' component={Preview} />
 
