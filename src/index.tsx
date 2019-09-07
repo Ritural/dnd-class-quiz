@@ -9,10 +9,10 @@ import { Header } from 'components/Header/Header';
 import { Home } from 'routes/Home/Home';
 import { NotFound } from 'routes/NotFound/NotFound';
 import { Preview } from 'routes/Preview/Preview';
-import { ReduxExample } from 'routes/ReduxExample/ReduxExample';
 import { store } from 'store/main-reducer';
-import 'styles/app.scss';
 import { Quiz } from 'routes/Quiz/Quiz';
+
+import 'styles/app.scss';
 
 const RouteContainer = posed.div({
   enter: {
@@ -53,7 +53,6 @@ class App extends React.Component {
                       <Route exact path='/' component={Home} />
                       <Route exact path='/quiz' component={Quiz} />
 
-                      <Route exact path='/redux-example' component={ReduxExample} />
                       <Route exact path='/preview' component={Preview} />
 
                       <Route component={NotFound} />
