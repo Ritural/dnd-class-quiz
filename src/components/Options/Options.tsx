@@ -2,10 +2,12 @@ import * as React from 'react';
 
 import { IOption } from 'definitions/types';
 import { Button } from 'components/common/Button/Button';
+import { actionSelectOption } from 'store/modules/quiz/actions';
 
 interface IProps {
   options: IOption[];
-  onSelect: (option: IOption) => void
+  questionId: string;
+  onSelect: typeof actionSelectOption;
 }
 
 const keyForIndex: {
@@ -22,7 +24,7 @@ function getKeyForIndex(index: number) {
   return keyForIndex[index];
 }
 
-export const Options = ({ options }: IProps) => {
+export const Options = ({ options, onSelect, questionId }: IProps) => {
   console.log('options', options);
 
   return (
@@ -31,7 +33,7 @@ export const Options = ({ options }: IProps) => {
         <li key={option.text} className='Options-item'>
           <Button
             label={option.text}
-            action={() => console.log(option)}
+            action={() => onSelect(questionId, option.id)}
             keyCode={getKeyForIndex(index)}
           />
         </li>

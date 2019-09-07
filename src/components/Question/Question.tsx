@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { IQuestion } from 'src/definitions/types';
+import { IQuestion } from 'definitions/types';
 
 interface IProps {
   question: IQuestion;

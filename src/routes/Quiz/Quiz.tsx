@@ -1,28 +1,55 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
+
 import { IQuestion } from 'definitions/types';
-import { start } from 'public/questions/start';
 import { Question } from 'components/Question/Question';
+import { Options } from 'components/Options/Options';
+import { getCurrentQuestion } from 'store/modules/quiz/selectors';
+import { actionSelectOption } from 'store/modules/quiz/actions';
+import { IReducerState } from 'store/main-reducer';
+import { Redirect } from 'react-router';
 
-// import { IQuestion } from 'definitions/types';
+interface IProps {
+  currentQuestion: IQuestion;
+  selectOption: typeof actionSelectOption;
+}
 
-// interface IProps {
-//   currentQuestion: IQuestion,
-// }
+export const QuizComponent = (props: IProps) => {
+  const {
+    currentQuestion,
+    selectOption,
+  } = props;
 
-export const Quiz = () => {
-  const [history, onSelect] = React.useState<IQuestion[]>([
-    start,
-  ]);
-
-  const currentQuestion = history[history.length - 1];
+  if (!currentQuestion) {
+    return <Redirect to='/complete' />;
+  }
 
   return (
     <section className='Quiz'>
       <Question question={currentQuestion} />
 
-      {/* Options */}
+      <Options
+        onSelect={selectOption}
+        options={currentQuestion.options}
+        questionId={currentQuestion.id}
+      />
 
       {/* History */}
     </section>
   );
 };
+
+function mapStateToProps(state: IReducerState) {
+  return {
+    currentQuestion: getCurrentQuestion(state),
+  };
+}
+
+const dispatchProps = {
+  selectOption: actionSelectOption,
+};
+
+export const Quiz = connect(
+  mapStateToProps,
+  dispatchProps,
+)(QuizComponent);
