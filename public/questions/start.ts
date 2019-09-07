@@ -14,7 +14,7 @@ const ALL_RATINGS: IClassRating = {
   paladin: 1,
 };
 
-export const melee: IOption = {
+const melee: IOption = {
   text: 'Up close and personal',
   rating: {
     fighter: 1,
@@ -25,26 +25,44 @@ export const melee: IOption = {
   }
 };
 
-export const ranged: IOption = {
+const ranged: IOption = {
   text: 'From a distance',
   rating: {},
 };
 
-export const meleeAndRanged: IOption = {
-  text: 'Like a bit of both',
+const meleeAndRanged: IOption = {
+  text: 'Anywhere on the battlefield',
   rating: { ...ALL_RATINGS },
 };
 
 export const start: IQuestion = {
   text: 'How do you want to fight things?',
-  options: [
-    melee,
-    ranged,
-    meleeAndRanged,
-  ],
+  options: [melee, ranged, meleeAndRanged],
 };
 
+const weapons: IOption = {
+  text: 'Swords, axes, daggers, bows, that sorta stuff',
+  rating: {},
+};
+
+const spells: IOption = {
+  text: 'Magical explosions, different elements, spells spells spells!',
+  rating: {},
+};
+
+const fists: IOption = {
+  text: 'My fists!',
+  rating: {
+    monk: 1,
+  },
+};
+
+// const magicalWeapons: IOption = {
+//   text: '',
+//   rating: {},
+// };
+
 export const weaponOrMagic: IQuestion = {
-  text: 'Do you want to hit things using a weapon or some magic',
-  options: [],
+  text: 'How do you want to hit things?',
+  options: [weapons, spells, fists],
 };
