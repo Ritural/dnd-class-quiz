@@ -1,20 +1,22 @@
 import createSagaMiddleware from '@redux-saga/core';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { createBrowserHistory } from 'history';
-import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import {
-  createResponsiveStateReducer,
-  responsiveStoreEnhancer,
-} from 'redux-responsive';
+  applyMiddleware,
+  combineReducers,
+  compose,
+  createStore,
+} from 'redux';
+import { createResponsiveStateReducer, responsiveStoreEnhancer } from 'redux-responsive';
 
 import { mainSaga } from 'store/main-saga';
 import { IS_PRODUCTION } from 'store/modules/app/constants';
 import { appReducer, IAppState } from 'store/modules/app/reducers';
-import { exampleReducer, IExampleState } from 'store/modules/example/reducers';
+import { quizReducer, IQuizState } from './modules/quiz/reducers';
 
 export interface IReducerState {
   app: IAppState;
-  exampleState: IExampleState;
+  quiz: IQuizState;
 }
 
 export const history = createBrowserHistory();
@@ -25,6 +27,7 @@ const middleware = [routerMiddleware(history), sagaMiddleware];
 let composeEnhancers = compose;
 
 if (!IS_PRODUCTION) {
+  // eslint-disable-next-line no-underscore-dangle
   const composeWithDevToolsExtension = (window as any)
     .__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
 
@@ -42,7 +45,7 @@ const rootReducer = combineReducers({
     wideScreen: '(min-width: 1600px)',
   }),
   app: appReducer,
-  exampleState: exampleReducer,
+  quiz: quizReducer,
   router: connectRouter(history),
 });
 
