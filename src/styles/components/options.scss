@@ -1,0 +1,16 @@
+// =============================
+// Options
+// =============================
+
+.Options {
+  color: green;
+
+  padding: $v * 4;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.Options-item {
+  @include button-reset();
+}

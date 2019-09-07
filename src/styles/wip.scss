@@ -1,21 +1,10 @@
-.ReduxExample {
-  padding: 48px;
-}
-
-.ReduxExample-list {
-  margin: 24px;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.ReduxExample-list-item {
-  width: 300px;
-  padding: 8px;
-}
+// =============================
+// WIP (Work in progress)
+// =============================
 
 .Main {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   background: #642b73; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to bottom,
@@ -27,4 +16,15 @@
     #c6426e,
     #642b73
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.Content {
+  position: relative;
+  // padding-top: $headerHeight;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

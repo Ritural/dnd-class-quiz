@@ -1,0 +1,12 @@
+// =============================
+// Header
+// =============================
+
+.Header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $headerHeight;
+  z-index: $z-header;
+}
