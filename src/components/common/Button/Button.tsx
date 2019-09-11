@@ -1,12 +1,21 @@
 import * as React from 'react';
+import { Redirect } from 'react-router';
 
 interface IProps {
   label: string;
-  action: any;
+  action: (() => void) | string;
   keyCode?: string;
 }
 
-export class Button extends React.Component<IProps> {
+interface IState {
+  needsToRedirect: string | null;
+}
+
+export class Button extends React.Component<IProps, IState> {
+  state: IState = {
+    needsToRedirect: null,
+  };
+
   componentDidMount() {
     const {
       keyCode,
@@ -31,24 +40,45 @@ export class Button extends React.Component<IProps> {
   handleKeyPress = (ev: any): void => {
     const {
       keyCode,
-      action,
     } = this.props;
 
     // HandleKeyPress isn't added if a keyCode isn't present
     if (keyCode === ev.key) {
-      action();
+      this.fireAction();
     }
   };
+
+  fireAction = () => {
+    const {
+      action,
+    } = this.props;
+
+    // It's a link
+    if (typeof action === 'string') {
+      return this.setState({
+        needsToRedirect: action,
+      });
+    }
+
+    // Else it's a function
+    return action();
+  }
 
   render() {
     const {
       label,
-      action,
       keyCode,
     } = this.props;
+    const {
+      needsToRedirect,
+    } = this.state;
+
+    if (needsToRedirect) {
+      return <Redirect push to={needsToRedirect} />;
+    }
 
     return (
-      <button className='Button' type='button' onClick={() => action()}>
+      <button className='Button' type='button' onClick={this.fireAction}>
         <span className='Button-keyCode'>{keyCode}</span>
         {label}
       </button>
