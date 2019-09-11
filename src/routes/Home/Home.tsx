@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { actionClearHistory } from 'store/modules/quiz/actions';
@@ -13,13 +12,16 @@ export const HomeComponent = ({ clearHistory }: IProps) => (
   <section className='Home'>
     <h1>DnD 5th Edition Class Quiz</h1>
 
-    <Link className='Button' to='/quiz'>
-      Start quiz
-    </Link>
+    <Button
+      label='Start quiz'
+      action='/quiz'
+      keyCode='s'
+    />
 
     <Button
       label='Clear history'
       action={clearHistory}
+      keyCode='c'
     />
   </section>
 );
