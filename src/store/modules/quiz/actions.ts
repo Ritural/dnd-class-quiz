@@ -27,7 +27,7 @@ export interface IClearHistory {
 export type QuizActions = ISelectOption | IStartQuiz | IClearHistory;
 
 // ACTIONS
-export function actionStartQuiz(answers?: string[]): QuizActions {
+export function actionStartQuiz(answers?: string[]): IStartQuiz {
   return {
     type: TYPE.StartQuiz,
     payload: {
