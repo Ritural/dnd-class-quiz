@@ -15,6 +15,7 @@ module.exports = {
     }
   },
   rules: {
+    'react/state-in-constructor': [0],
     'import/no-extraneous-dependencies': [0],
     'react/no-unescaped-entities': [0],
     'import/prefer-default-export': [0],
