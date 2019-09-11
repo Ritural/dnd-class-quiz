@@ -58,3 +58,7 @@ export const store = createStore(
 );
 
 sagaMiddleware.run(mainSaga);
+
+// However it can also be handy to persist the current state in the localStorage.
+// @NOTE Could log redux state to local storage to hydrate it
+// store.subscribe(() => console.log(store.getState()));
